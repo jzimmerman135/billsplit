@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="calculator_style.css">
+
+    <!-- <script src="dropdownLogic.js"></script>
+    <script>windowSize.addListener(hideMenu)//hides dropdown in desktop mode</script>  -->
+
+    <title>Receipt Calculator</title>
+    <style>
+        /* Style for each page */
+    </style>
+
+
+    <!-- NAVBAR STYLE -->
+    <style>
+        /* THE NAVBAR OVERLAY */ 
+
+        .overlay {
+            /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+            height: 100%;
+            width: 0;
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            background-color: rgb(0,0,0); /* Black fallback color */
+            background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+            overflow-x: hidden; /* Disable horizontal scroll */
+            transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+        }
+        
+        /* Position the content inside the overlay */
+        .overlay-content {
+            position: relative;
+            top: 25%; /* 25% from the top */
+            width: 100%; /* 100% width */
+            text-align: center; /* Centered text/links */
+            margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+        }
+        
+        /* The navigation links inside the overlay */
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block; /* Display block instead of inline */
+            transition: 0.3s; /* Transition effects on hover (color) */
+        }
+        
+        /* When you mouse over the navigation links, change their color */
+        .overlay a:hover, .overlay a:focus {
+            color: #e46c2c;
+        }
+        
+        /* Position the close button (top right corner) */
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+        
+        /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+        @media screen and (max-height: 450px) {
+            overlay a {font-size: 20px}
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+        /*______________________________________________________________________________________________________________________________________*/
+        
+    </style>
+
+    <!-- NAVBAR OVERLAY SCRIPT -->
+    <script>
+
+        /* Open when someone clicks on the  element */
+        function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+        }
+    
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+</head>
+<body>
+    <div id="pageContainer">
+        <!-- Don't need to worry -->
+        <div class="navbar">
+            <div id = "myNav" class = "overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href = "javascript:void(0)" class = "closebtn" onclick = "closeNav()">&times;</a>
+          
+                <!-- ANESU PLEASE FIX HERE -->
+                <!-- Overlay content -->
+                <div class = "overlay-content">
+                  <a href = "index.html">Home</a>
+                  <a href = "contact.html">Contact</a>
+                  <a href = "#">Services</a>
+                  <a href = "songList.xml">SongsList XML</a>
+                  <a href = "hotdogs.html">Hot Dog</a>
+                </div>
+            </div>
+            <ul class="Logos">
+                <li class="companyName"><a class="nostyle" href="index.html">Billsplit</a></li></a>
+                <a class="logo" href="index.html"></a>
+                <span id="not_mobile">
+                <li class="navItem"><a href="howto.html">How to use</a></li>
+                <li class="navItem"><a href="aboutUs.html">About</a></li>
+                </span>
+            </ul>
+            <ul class="NavLinks">
+                <span id="not_mobile">
+                <li class="attentionItem"><a href="fullCalculator.html">Split a Reciept</a></li>
+                </span>
+                <a class="hamburger" href="javascript:void(0);" class="icon" onclick="openMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </ul>
+        </div>
+       
+        
+
+        <!-- All page content here, probably use grid-->
+        <div class="container" style ="margin-top: 2.5rem;">
+        <div class="subcontainer">
+            <div class=namesInfo>
+                <!-- <div class="namesTitle"><strong>Being Shared By</strong></div> -->
+                <span class=namesHeader>
+                    <div id="namesHRow" class="namesHRow">
+                        <h2 id="welcome">Welcome to the Billsplit Receipt Calculator</h2>
+                    </div>
+                    <div id="initialsRow">
+                        <h3 id="welcomeSub">Enter names until everyone is accounted for, then hit finish to move on.
+                            <br/><br/>When prompted, enter the name, prices and initials of those sharing each item on your receipt.
+                            
+                        </h3>
+                    </div>
+                </span>
+            </div>
+        
+            <div id="fullReceipt">
+                <div class="receiptHeader">
+                    <li class="items">Item</li>
+                    <li class="prices" style="list-style-type: none; padding-left:0.8rem">Price</li>
+                    <li class="sharedBy" style="margin-left: 3em;">Shared By</li>
+                </div>
+            </div>
+            <div class="totalBar" style="display: none">Total:  $
+                <div id="totalVal">0</div>
+                <div id="tax">Tax:  6.25%</div>
+                <button id="minusTax" onmousedown="minusTax()">-</button>
+                <button id="plusTax" onmousedown="addTax()">+</button>
+            </div>
+            <div id="inputReg">
+                <span class="inReg">
+                    <div id="inMessage" class="inputMsg">Enter the first person</div>
+                    <span id="typeBar">
+                        <input type="text" id="inBar" size="50" placeholder="Use 'enter' key to submit" onkeydown="enterName(event)" oninput= "updateSubmit()">
+                        <button id="submitInput" onclick="getName()">
+                            <span class="material-icons md-24">arrow_circle_right</span>
+                        </button>
+                    </span>
+                </span>
+                <span id="fButtonBox">
+                    <button id="finishButton" onclick="finishNames()">Finish</button>  
+                </span>
+            </div>
+            <span id="totalsRow">
+                
+            </span>
+            <div class="feedbackBar">
+                <a class="feedback" href="feedback.html">Provide Feedback?</a>
+            </div> 
+        </div>
+        
+        </div>
+    
+
+        <!-- Don't need to worry abt this either -->
+        <div class="footer">
+            <ul class="footerItems">
+                <li class="footerItem rightFoot"><a href="contactus.html">Contact Us</a></li>
+                <li class="footerItem"><a href="aboutUs.html">About</a></li>
+                <li class="footerItem"><a href="howto.html">Tutorial</a></li>
+                <li class="footerNotes">Billsplit 2021. Some Rights Reserved.</li>
+            </ul>
+        </div>
+    
+    </div>
+</body>  
+<script src="calculatorBackend.js">
+    
+</script>
+       
+    
+
+</html>

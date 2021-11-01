@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="header_footer.css">
+    <link rel="stylesheet" href="pro.css">
+    <script src="dropdownLogic.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>windowSize.addListener(hideMenu)//hides dropdown in desktop mode</script> 
+
+    <title>Home</title>
+    
+    
+    <style>
+        /* Style for each page */
+    </style>
+</head>
+<body>
+  
+  <script language="javascript">
+    $(document).ready(function(){
+      $("div.hidden").fadeIn(3000).removeClass('hidden');;
+    })
+  </script>
+  
+    <div id="pageContainer">
+        <!-- Don't need to worry -->
+        <div class="navbar">
+            <ul class="Logos">
+                <li class="companyName"><a href="index.html"></a>Billsplit</li>
+                <li class="logo"><a href="index.html"></a></li>
+                <span id="not_mobile">
+                <li class="navItem"><a href="howto.html">How to use</a></li>
+                <li class="navItem"><a href="aboutUs.html">About</a></li>
+                </span>
+            </ul>
+            <ul class="NavLinks">
+                <span id="not_mobile">
+                <li class="attentionItem"><a href="fullCalculator.html">Split a Reciept</a></li>
+                </span>
+                <a class="hamburger" href="javascript:void(0);" class="icon" onclick="openMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </ul>
+        </div>
+        <div class="dropdown">  
+            <span id= "mobile">
+            <ul>
+                <li class="dropdownItem"><a href="#">About</a></li>
+                <li class="dropdownItem"><a href="#">How To Use</a></li>
+                <li class="dropdownAttentionItem"><a href="#">Split A Reciept</a></li>
+            </ul>
+            </span>
+        </div>
+
+
+
+        <div class = "founders">
+          <div class = "title">
+          Pro-Version <br>
+          Coming Soon!<br><br>
+        </div>
+          <div class = description>
+              Our classic Billsplit calculator but with added features.
+              Just $5.99 per month will make splitting your bill much easier
+              and save you even more time. Includes reciept scanning and records user analytics.<br><br>
+              
+              <form class = description>
+                  Email: <input type = "text" id = "email" value = "abc@gmail.com" class = "email"><br><br>
+                  <input type = "button" value = "Notify Me" onclick = "emailEntered()" class = "button">
+              </form>
+          </div>
+          
+          <script language = "javascript">
+          function emailEntered(){
+          document.getElementById("email").value = "Email Has Been Recorded!";
+        }
+          </script>
+          
+          
+        </div>
+        
+      
+
+
+
+
+
+
+
+        <!-- Don't need to worry abt this either -->
+        <div class="footer">
+            <ul class="footerItems">
+                <li class="footerItem rightFoot"><a href="#">Contact Us</a></li>
+                <li class="footerItem"><a href="#">About</a></li>
+                <li class="footerItem"><a href="#">Tutorial</a></li>
+                <li class="footerNotes">Billsplit 2021. Some Rights Reserved.</li>
+            </ul>
+        </div>
+    
+    </div>
+</body>  
+    <script>
+        // add any functions here or ideally use a separate js document
+    </script>
+    
+       
+    
+
+</html>

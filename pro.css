@@ -1,0 +1,123 @@
+
+.founders{
+  background-color: var(--bg_accent_light);
+  padding:50px;
+  width: 100%;
+  min-height: 80%;
+  font-family: "Roboto";
+  font-weight: 300;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.description{
+  width: 35ch;
+  font-size: 25px;
+  float:left;
+}
+
+.email{
+  width:80%;
+  font-size: 18px;
+  padding: 0.2em;
+  background-color: #f0f0f0f0;
+  border-radius: 0.5em;
+  border-style: none;
+  box-shadow: 0 0 3px 1px #1e1e78bf;
+}
+
+.proContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  vertical-align: center;
+}
+
+#symbol {
+  width:200px;
+  margin-left: -1.8em;
+  font-family: "Roboto Slab";
+  transform: scale(1.5)
+}
+
+.receiptPic {
+  width: 300px;
+  position: absolute;
+  display: flex;
+  margin-top: 0em;
+  margin-left: 6em;
+  filter: saturate(0.8) ;
+}
+
+@media screen and (max-width:600px) {
+  #symbol {
+    transform: scale(1);
+    padding-bottom: 1em;
+    margin-left: -2em;
+  }
+  .description {
+    font-size: 16px;
+  }
+  .email {
+    width: 80%;
+  }
+  .title {
+    font-size: 22px;
+  }
+  .receiptPic {
+    display: none;
+  }
+}
+
+@media screen and (min-width:0px) {
+
+.proNew {
+  font-size: 10px;
+  margin-left: 0.1em;
+  margin-bottom: 1.3em;
+  padding: 0.15em;
+  background-color: #e7042e;
+  color:var(--bg_main);
+  border: 2px solid var(--text_dark_border_opacity);
+}
+.proHead {
+  margin-left: 2em;
+  margin-top: 0.25em;
+  padding: 0.25em;
+  font-size: 40px;
+  color: var(--text_dark);
+  background-color: none;
+  border-radius: 0.2em;
+  display: flex;
+  align-items: center;
+}
+
+.pro {
+  opacity: 0.8;
+  background-color: var(--text_dark);
+  transform: scale(0.7);
+}
+
+.proMsg {
+  opacity: 0.7;
+  font-family: "Roboto";
+  font-size: 18px;
+  margin-top: 1em;
+  margin-left: 2em;
+  margin-right: auto;
+}
+}
+
+@media screen and (max-width:960px) {
+  .receiptPic {
+    width: 200px;
+    margin-left: 5em;
+  }
+}
+@media screen and (max-width:750px) {
+  .receiptPic {
+    width: 140px;
+    margin-left: 4em;
+  }
+}
