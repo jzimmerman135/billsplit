@@ -1,0 +1,112 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inBar" size="50" onkeydown="enterKey(event)">
+    <button type="button" onclick="finish()">Submit</button>
+    <div id="div1"></div>
+</body>
+<script>
+var count = 0;
+var numList = [];
+
+// function finish(){
+//     num = "quit";
+// }
+var num;
+var finished = false;
+
+function promptFor(type){
+    let result = document.getElementById("inBar").value;
+    document.getElementById("inBar").value = "";
+
+    if (type == "item"){
+        updateMessage("Enter an item");
+        result = result.toString();
+    }
+    else if (type == "price"){
+        updateMessage("Enter the price");
+        result = parseFloat(result);
+        if (isNan(result)){
+            updateMessage("Price invalid please try again.");
+            promptFor("price");
+        }
+        return result;
+    }
+    else if (type == "sharedBy"){
+        updateMessage("Enter who it is shared by");
+        return result.toString();
+    }
+    else {
+        return result;
+    }
+}
+
+function finish(){
+    document.getElementById("inBar").value = "quit";
+    pushNum();
+    document.getElementById("inBar").value = "";
+}
+
+function pushNum(){
+
+    if (document.getElementById("inBar").value == "quit"){
+        addNumber(numList);
+        return;
+    }
+    if (count == 0){
+        num = promptFor("");
+        addNumber(methodOne(num));
+        numList.push(num);
+        count++;
+    }
+    else if (count == 1){
+        num = promptFor("");
+        addNumber(methodTwo(num));
+        numList.push(num);
+        count++;
+    }
+    else if (count == 2){
+        num = promptFor("");
+        addNumber(methodThree(num));
+        numList.push(num);
+        count++;
+    }
+    else{
+        count = 0;
+        pushNum();
+    }
+}
+
+function addNumber(num){
+    const para = document.createElement("p");
+    const node = document.createTextNode(num);
+    para.appendChild(node);
+    const element = document.getElementById("div1");
+    element.appendChild(para);
+}
+
+function methodOne(num){
+    let newNum = parseInt(num) + 10;
+    return "method one adds 10 to " + num + " to get " + newNum;
+}
+function methodTwo(num){
+    let newNum = parseInt(num) - 2;
+    return "method two subtracts 2 from " + num + " to get " + newNum;
+}
+function methodThree(num){
+    return "method three doubles " + num + " to get " + (parseInt(num)*2);
+}
+
+function enterKey(event) {
+  var x = event.keyCode;
+  if (x == 13) {
+    pushNum();
+  }
+}
+</script>
+</html>

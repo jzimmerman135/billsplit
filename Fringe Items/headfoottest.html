@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #pageWrap {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: row;
+        }
+        .header{
+            background: grey;
+            height: 40px;
+            position: fixed;
+            width: 100%;
+        }
+        .hiddenbox{
+            height: 40px;
+        }
+        .footer{
+            background: aqua;
+            height: 30px;
+            width: 100%;
+            margin-top: auto;
+        }
+        .content {
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pageWrap">
+        <div class="header">I AM THE HEADER
+            <div>what</div>
+        </div>
+        <div class="hiddenbox"></div>
+
+        <div class="content">I am the content
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, harum!</p>
+            <br/>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt, harum!</p>
+            <br/>
+        </div>
+
+        <div class="footer">I AM THE FOOTER
+            <div></div>
+        </div>
+    </div>
+</body>
+</html>

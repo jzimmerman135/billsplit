@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.5.1.min.js"></script>
+    <title>Document</title>
+</head>
+ <style>
+    #invisibleBox {
+        height: 100%;
+        width: 100%;
+        display: block;
+        position: absolute;
+        background-color: lightblue;
+        top: 0;
+        left: 0;
+    }
+    #wrap {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        margin: 300px;
+    }
+ </style>
+<body>
+    <div id="wrap">
+            <li id="demo">Edit ME!</li>
+            <li id="demo2">Edit Me</li>
+    </div>
+</body>
+
+<script>
+    document.getElementById("demo").ondblclick = function() {editItem("demo")};
+    document.getElementById("demo2").ondblclick = function() {editItem("demo2")};
+    
+    function editItem(id){
+        var toEdit = document.getElementById(id);
+        var innerData = toEdit.innerHTML;
+        toEdit.innerHTML = "";
+        var x = document.createElement("input");
+        toEdit.appendChild(x);
+        x.value = innerData;
+        x.addEventListener("keydown", function(e) {
+            if (e.code == "Enter") {
+                setNewData(id);
+                toEdit.ondblclick = function() {editItem(id);}
+            }
+        });
+        toEdit.ondblclick = function() {
+            setNewData(id);
+            toEdit.ondblclick = function() {editItem(id);}
+        }
+        
+        function setNewData(id){
+            let newData = x.value;
+            //editData here
+            x.remove();
+            toEdit.innerHTML = newData;
+        }
+    }
+
+
+    
+
+    
+    
+</script>
+</html>

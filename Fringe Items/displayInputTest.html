@@ -1,0 +1,264 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DisplayTest</title>
+</head>
+<style>
+    #fullReciept{
+        display: none;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 60%;
+        border: 2px solid;
+    }
+    .recieptHeader{
+        font-weight: 600;
+        background: lightblue;
+        margin: 1rem 2rem;
+        list-style-type: none;
+    }
+    .recieptCol {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        list-style-type: none;
+    }
+    #itemsCol, #pricesCol, #sharedByCol {
+        display: inherit;
+        flex-direction: inherit;
+    }
+    #pricesCol {
+        list-style-type: "\0024";
+    }
+    .recieptRow li {
+        margin: 0.5rem 2rem;
+    }
+
+</style>
+<body>
+    <div id="fullReciept">
+        <div class="recieptCol">
+            <div id="itemsCol">
+                <li class="recieptHeader">Items</li>
+            </div>
+        </div>
+        <div class="recieptCol">
+            <div id="pricesCol">
+                <li class="recieptHeader">Prices</li>
+            </div>
+        </div>
+        <div class="recieptCol">
+            <div id="sharedByCol">
+                <li class="recieptHeader">sharedBy</li>
+            </div>
+        </div>
+    </div>
+
+    <div id="inMessage">Enter an item</div>
+    <input type="text" id="inBar" size="50" onkeydown="enterKey(event)">
+    <button id="finishButton" onclick="finish()">Finish</button>
+</body>
+
+<script>
+var promptCount = 0;
+var items = [];
+var prices = [];
+var sharedBy = [];
+
+function promptFor(type){
+    let result = document.getElementById("inBar").value;
+    document.getElementById("inBar").value = "";
+
+    if (type == "item"){
+        if (invalidate(type,result)){
+            updateErrorMessage("Please enter an item.");
+            return "invalid";
+        };
+        updateMessage("Enter the price");
+        return result;
+    }
+    if (type == "price"){
+        if (invalidate(type,result)){
+            updateErrorMessage("Price invalid please try again.");
+            return "invalid";
+        }
+        updateMessage("Enter who it is shared by");
+        return result;
+    }
+    if (type == "sharedBy"){
+        if (invalidate(type,result)){
+            updateErrorMessage("Please enter valid initials.");
+            return "invalid";
+        };
+        updateMessage("Enter an item");
+        return result;
+    }
+    return;
+}
+
+function updateMessage(message) {
+    document.getElementById("inMessage").innerHTML = message;
+    document.getElementById("inBar").placeholder = "";
+}
+
+function updateErrorMessage(message) {
+    document.getElementById("inBar").placeholder = message;
+}
+
+function finish(){
+    document.getElementById("inBar").value = "quit";
+    getInput();
+    document.getElementById("inBar").value = "";
+}
+
+function getInput(){
+    if (document.getElementById("inBar").value == "quit"){
+        document.write(items + "<br>");
+        document.write(prices + "<br>");
+        document.write(sharedBy);
+        return;
+    }
+    var num;
+    if (promptCount == 0){
+        num = promptFor("item");
+        if (num == "invalid"){
+            return;
+        };
+        display(num,"items");
+        items.push(num);
+        promptCount++;
+        document.getElementById("finishButton").disabled = true;
+    }
+    else if (promptCount == 1){
+        num = promptFor("price");
+        if (num == "invalid"){
+            return;
+        };
+        display(num,"prices");
+        prices.push(num);
+        promptCount++;
+    }
+    else if (promptCount == 2){
+        num = promptFor("sharedBy");
+        if (num == "invalid"){
+            return;
+        };
+        display(num,"sharedBy");
+        sharedBy.push(num);
+        promptCount++;
+        document.getElementById("finishButton").disabled = false;
+    }
+    else{
+        promptCount = 0;
+        getInput();
+    }
+}
+
+function display(value, type){
+    document.getElementById("fullReciept").style.display = "flex";
+    let location = createLocation(type)
+    const para = document.createElement("li");
+    para.id = location;
+    const tnode = document.createTextNode(value);
+    para.appendChild(tnode);
+    para.ondblclick = function() {editItem(location)};
+    const element = document.getElementById(type + "Col");
+    element.appendChild(para);
+}
+
+function createLocation(type){
+    let x = items.length;
+    if (type == "items"){
+        x++;
+    }
+    return type + x.toString();
+}
+
+function enterKey(event) {
+  var x = event.keyCode;
+  if (x == 13) {
+    getInput();
+  }
+}
+
+function editItem(id){
+        var toEdit = document.getElementById(id);
+        var innerData = toEdit.innerHTML;
+        toEdit.innerHTML = "";
+        var x = document.createElement("input");
+        toEdit.appendChild(x);
+        x.value = innerData;
+        x.select();
+        x.addEventListener("keydown", function(e) {
+            if (e.code == "Enter") {
+                setNewData(id);
+                toEdit.ondblclick = function() {editItem(id);}
+            }
+        });
+        toEdit.ondblclick = function() {
+            setNewData(id);
+            toEdit.ondblclick = function() {editItem(id);}
+        };
+        function setNewData(id){
+            let newData = x.value;
+            if (invalidate(id,x.value)){
+                return;
+            }
+            editData(id, newData);
+            x.remove();
+            toEdit.innerHTML = newData;
+        }
+}
+
+function editData(id, newData){
+    let i;
+    console.log("trying to edit " + id);
+    console.log(id);
+    if (id[0] == "i"){
+        i = id.substring('items'.length);
+        i = parseInt(i);
+        items[i-1] = newData;
+        console.log("changed " + id);
+    }
+    else if (id[0] == "p"){
+        i = id.substring('prices'.length);
+        i = parseInt(i);
+        prices[i-1] = newData;
+        console.log("changed " + id);
+    }
+    else if (id[0] == "s"){
+        i = id.substring('sharedBy'.length);
+        i = parseInt(i);
+        sharedBy[i-1] = newData;
+        console.log("changed " + id);
+    }
+}
+
+function invalidate(id,val){
+    if (id[0] == "i"){
+        if (val == ""){
+            return true;
+        }
+    }
+    else if (id[0] == "p"){
+        if (val == ""){
+            return true;
+        }
+        else if (isNaN(val)){
+            return true;
+        }
+    }
+    else if (id[0] == "s"){
+        if (val == ""){
+            return true;
+        }
+    }
+    else {
+        return false;
+    }
+}
+</script>
+
+</html>
