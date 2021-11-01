@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto Slab">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="header_footer.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="dropdownLogic.js"></script>
+    <script>windowSize.addListener(hideMenu)//hides dropdown in desktop mode</script> 
+
+    <title>Contact Us</title>
+    
+
+
+    <!-- NAVBAR STYLE -->
+    <style>
+        /* THE NAVBAR OVERLAY */ 
+
+        .overlay {
+            /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+            height: 100%;
+            width: 0;
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            background-color: rgb(0,0,0); /* Black fallback color */
+            background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+            overflow-x: hidden; /* Disable horizontal scroll */
+            transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+        }
+        
+        /* Position the content inside the overlay */
+        .overlay-content {
+            position: relative;
+            top: 25%; /* 25% from the top */
+            width: 100%; /* 100% width */
+            text-align: center; /* Centered text/links */
+            margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+        }
+        
+        /* The navigation links inside the overlay */
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 36px;
+            color: #818181;
+            display: block; /* Display block instead of inline */
+            transition: 0.3s; /* Transition effects on hover (color) */
+        }
+        
+        /* When you mouse over the navigation links, change their color */
+        .overlay a:hover, .overlay a:focus {
+            color: #e46c2c;
+        }
+        
+        /* Position the close button (top right corner) */
+        .overlay .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px;
+        }
+        
+        /* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+        @media screen and (max-height: 450px) {
+            .overlay a {font-size: 20px}
+            .overlay .closebtn {
+                font-size: 40px;
+                top: 15px;
+                right: 35px;
+            }
+        }
+        /*______________________________________________________________________________________________________________________________________*/
+        
+    </style>
+
+    <!-- NAVBAR OVERLAY SCRIPT -->
+    <script>
+
+        /* Open when someone clicks on the  element */
+        function openNav() {
+        document.getElementById("myNav").style.width = "100%";
+        }
+    
+        /* Close when someone clicks on the "x" symbol inside the overlay */
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+    </script>
+
+    <!-- BIOGRAPHY CARDS CSS -->
+    <style>
+
+        p{
+            font-size: 20px;
+            color: #5CDB95;
+        }
+
+        small {
+            color: #d5f8e6e0;
+        }
+        h4 {
+            color: white;
+            font-size: 25px;
+        }
+
+        h5{
+            color: white;
+        }
+
+        .card {
+            background-color: #2c2c2c;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 725px;
+            max-height: 400px;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .title {
+            color: #5CDB95;;
+            font-size: 18px;
+        }
+        
+        a {
+            text-decoration: none;
+            font-size: 22px;
+            color: black;
+        }
+        
+        button:hover, a:hover {
+            opacity: 0.7;
+        }
+        
+        .btn-primary{
+            background-color: #5CDB95;
+        }
+    </style>
+
+    <style>
+        .nostyle {
+            text-decoration: none;
+        }
+    </style>
+
+
+
+</head>
+<body>
+    <div id="pageContainer">
+        <!-- Don't need to worry -->
+        <div class="navbar">
+            <div id = "myNav" class = "overlay">
+
+                <!-- Button to close the overlay navigation -->
+                <a href = "javascript:void(0)" class = "closebtn" onclick = "closeNav()">&times;</a>
+          
+                <!-- Overlay content -->
+                <div class = "overlay-content">
+                  <a href = "index.html">Home</a>
+                  <a href = "contact.html">Contact</a>
+                  <a href = "#">Services</a>
+                  <a href = "songList.xml">SongsList XML</a>
+                  <a href = "hotdogs.html">Hot Dog</a>
+                </div>
+            </div>
+            <ul class="Logos">
+              <li class="companyName"><a class="nostyle" href="index.html">Billsplit</a></li></a>
+              <a class="logo" href="index.html"></a>
+                <span id="not_mobile">
+                <li class="navItem"><a href="howto.html">How to use</a></li>
+                <li class="navItem"><a href="aboutUs.html">About</a></li>
+                </span>
+            </ul>
+            <ul class="NavLinks">
+                <span id="not_mobile">
+                <li class="attentionItem"><a href="fullCalculator.html">Split a Reciept</a></li>
+                </span>
+                <a class="hamburger" href="javascript:void(0);" class="icon" onclick="openMenu()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </ul>
+        </div>
+       
+        
+
+        <!-- All page content here, probably use grid-->
+        <div class="container" style ="margin-top: 0.5rem;">
+
+            <!-- CONTACT CARDS -->
+            <div class = "container">  
+                <div class = "row">
+                    <div class="col align-self-center">
+                        <h1 class="centreAlign" style="text-align: center; color: var(--text_dark);">Meet Our Team</h1>
+                    </div>
+                </div> <!-- End row -->
+                <p style="text-align: center; color: var(--text_dark)">With more than 10 years of experience, more people celebrate with Gemma’s Hire Service than any other event rental company. </p>
+                <p style="text-align: center; color: #5CDB95;">Our highly trained, professional staff is always on call to make sure your party is set up on time, in superb condition, in any weather.</p>
+                <p style="text-align: center; color: var(--text_dark);">Our Special Events Consultants provide event consultation and location  recommendations, detailed diagrams of the event layout, on-time delivery and pick-up and more.</p>
+                <div class = "row">
+                    <!-- 1st Person-->
+                    <div class="col-12 col-md-6 align-self-center">
+                        <div class="card my-3">
+                            <img src="img/headshotMan.jpg" alt="John" height = "150px" width = "200px" class="align-self-center" >
+                            <h5 class = "centreAlign">Jacob Zimm</h5>
+                            <p class="title">Managing Director</p>
+                            <p class = "centreAlign" style="color:white">Tufts University</p>
+                            <a href = "mailto:celestino@gemmas.com" class = "btn-sm btn-primary">CONTACT </a>
+                        </div>
+                    </div>
+                    <!-- 2nd Person-->
+                    <div class="col-12 col-md-6 align-self-center">
+                        <div class="card my-3">
+                            <img src="img/headshotMan.jpg" alt="John" height = "150px" width = "200px" class="align-self-center" >
+                            <h5 class = "centreAlign">Zamie Abdullah</h5>
+                            <p class="title">Events Consultant & Web Developer</p>
+                            <p class = "centreAlign" style="color:white">Tufts University</p>
+                            <a href = "mailto:agavhera@gmail.com" class = "btn-sm btn-primary">CONTACT </a>
+                        </div>
+                    </div>
+                </div> <!-- End row -->
+                <div class = "row">
+                    <!-- 3rd Person-->
+                    <div class="col-12 col-md-6 align-self-center">
+                        <div class="card my-3">
+                            <img src="img/headshotMan.jpg" alt="John" height = "150px" width = "200px" class="align-self-center" >
+                            <h5 class = "centreAlign">Eddie</h5>
+                            <p class="title">Software Engineer</p>
+                            <p class = "centreAlign" style="color:white">Tufts University</p>
+                            <a href = "mailto:shamiso@gemmas.com" class = "btn-sm btn-primary">CONTACT </a>
+                        </div>
+                    </div>
+
+                    <!-- 4th Person-->
+                    <div class="col-12 col-md-6 align-self-center">
+                        <div class="card my-3">
+                            <img src="img/headshotMan.jpg" alt="John" height = "150px" width = "200px" class="align-self-center" >
+                            <h5 class = "centreAlign">Anesu Gavhera</h5>
+                            <p class="title">Trap Lord</p>
+                            <p class = "centreAlign" style="color:white">Tufts University School of Trap-geneering</p>
+                            <a href = "mailto:sebastian@gemmas.com" class = "btn-sm btn-primary">CONTACT </a>
+                        </div>
+                    </div>
+                </div> <!-- End row -->
+            </div> <!-- end container-->
+
+            <!-- BIOGRAPHY TABS -->
+            <div class = "row row-content">
+                <div class = "col-12">
+                    <div id="accordion">
+                        <div class="card">
+                            <div role="tab" class="card-header">
+                                <h4>
+                                    <a data-toggle="collapse" style="color:white; font-size: 28px;" data-target="#bootstrap">
+                                        Jacob Zimmerman <small> Director</small>
+                                    </a>
+                                </h4>
+                                <div class="collapse show" id="bootstrap" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p style="color:#5CDB95;">Gemma’s Events is the whole package. From the proposal stage to execution, you can expect attention to details and a product you will be proud to share with your event attendees and the C-level executives of your company.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div role="tab" class="card-header">
+                                <h4>
+                                    <a class="collapsed" style="color:white; font-size: 30px;" data-toggle="collapse" data-target="#git">
+                                        Zamie Adbullah <small>  Back-end Developer</small>
+                                    </a>
+                                </h4>
+                                <div class="collapse" id="git" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p style="color:#5CDB95;">I want to thank you for all of your assistance with our group. From your quick response time to your adaptability and the level of service you provided to my clients on the ground, you exceeded my expectations. I look forward to working with you again in the future!</p>
+                                   </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div role="tab" class="card-header">
+                                <h4>
+                                    <a class="collapsed" style="color:white; font-size: 28px;" data-toggle="collapse" data-target="#mongo">
+                                        Eddie <small>  Front-end Developer</small>
+                                    </a>
+                                </h4>
+                                <div class="collapse" id="mongo" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p style="color:#5CDB95;">Our meeting was an overwhelming success and it was in no small part due to your efforts. Thanks for everything from the advice to the planning, to the support that you gave us. Your recommendations for both our team building and dinner event were dead on! We are still getting great comments about the program.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div role="tab" class="card-header">
+                                <h4>
+                                    <a class="collapsed" style="color:white; font-size: 28px;" data-toggle="collapse" data-target="#node">
+                                        Anesu Gavhera <small>  Full Stack Developer</small>
+                                    </a>
+                                </h4>
+                                <div class="collapse" id="node" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <p style="color:#5CDB95;">Gemma's Events is the most creative and detail oriented company I have ever worked with! They have exceeded my expectations every step of the way starting with creating the right type of event for our demographic, all the way through final implementation!</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        
+                    </div> <!-- end tab content-->
+
+                </div> <!-- end col-->
+            </div> <!-- end row-->
+
+
+            
+            
+        </div> <!-- end container-->
+    
+
+        <!-- Don't need to worry abt this either -->
+        <div class="footer">
+            <ul class="footerItems">
+                <li class="footerItem rightFoot"><a href="contactus.html">Contact Us</a></li>
+                <li class="footerItem"><a href="aboutUs.html">About</a></li>
+                <li class="footerItem"><a href="howto.html">Tutorial</a></li>
+                <li class="footerNotes">Billsplit 2021. Some Rights Reserved.</li>
+            </ul>
+        </div>
+    
+    </div>
+</body>  
+    <script>
+        // add any functions here or ideally use a separate js document
+    </script>
+    
+       
+    
+
+</html>
