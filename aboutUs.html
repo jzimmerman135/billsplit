@@ -19,45 +19,66 @@
     <style>
         /* Style for each page */
     </style>
+    <script language="javascript">
+      $(document).ready(function(){
+        $("div.hidden").fadeIn(3000).removeClass('hidden');;
+      })
+    </script>
+<!-- NAVBAR STYLE -->
+<link rel="stylesheet" href="nav.css">
+
+<!-- NAVBAR OVERLAY SCRIPT -->
+<script>
+    /* Open when someone clicks on the  element */
+    function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+    }
+
+    /* Close when someone clicks on the "x" symbol inside the overlay */
+    function closeNav() {
+        document.getElementById("myNav").style.width = "0%";
+    }
+</script>
+
 </head>
 <body>
-  
-  <script language="javascript">
-    $(document).ready(function(){
-      $("div.hidden").fadeIn(3000).removeClass('hidden');;
-    })
-  </script>
-  
-    <div id="pageContainer">
-        <!-- Don't need to worry -->
-        <div class="navbar">
-          <ul class="Logos">
+<div id="pageContainer">
+    <!-- Don't need to worry -->
+    <div class="navbar">
+        <div id = "myNav" class = "overlay">
+
+            <!-- Button to close the overlay navigation -->
+            <a href = "javascript:void(0)" class = "closebtn" onclick = "closeNav()">&times;</a>
+      
+            <!-- ANESU PLEASE FIX HERE -->
+            <!-- Overlay content -->
+            <div class = "overlay-content">
+              <a href = "index.html">Home</a>
+              <a href = "contact.html">Contact</a>
+              <a href = "#">Services</a>
+              <a href = "songList.xml">SongsList XML</a>
+              <a href = "hotdogs.html">Hot Dog</a>
+            </div>
+        </div>
+        <ul class="Logos">
             <li class="companyName"><a class="nostyle" href="index.html">Billsplit</a></li></a>
             <a class="logo" href="index.html"></a>
             <span id="not_mobile">
             <li class="navItem"><a href="howto.html">How to use</a></li>
             <li class="navItem"><a href="aboutUs.html">About</a></li>
             </span>
-          </ul>
-          <ul class="NavLinks">
-              <span id="not_mobile">
-              <li class="attentionItem"><a href="fullCalculator.html">Split a Reciept</a></li>
-              </span>
-              <a class="hamburger" href="javascript:void(0);" class="icon" onclick="openMenu()">
-                  <i class="fa fa-bars"></i>
-              </a>
-          </ul>
-        </div>
-        <div class="dropdown">  
-            <span id= "mobile">
-            <ul>
-                <li class="dropdownItem"><a href="#">About</a></li>
-                <li class="dropdownItem"><a href="#">How To Use</a></li>
-                <li class="dropdownAttentionItem"><a href="#">Split A Reciept</a></li>
-            </ul>
+        </ul>
+        <ul class="NavLinks">
+            <span id="not_mobile">
+            <li class="attentionItem"><a href="fullCalculator.html">Split a Reciept</a></li>
             </span>
-        </div>
+            <a class="hamburger" href="javascript:void(0);" class="icon" onclick="openNav()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </ul>
+    </div>
 
+<div style="margin-top: 2.5em;"></div>
 <div class = "topimage">
 <div class = "toppic">
   <br><br>
@@ -156,7 +177,7 @@
             </ul>
         </div>
     
-    </div>
+</div>
 </body>  
     <script>
         // add any functions here or ideally use a separate js document
