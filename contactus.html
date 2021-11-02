@@ -103,6 +103,28 @@
         .navbar a:hover {
             text-decoration: none;
         }
+        
+        .feedbackBar {
+            margin-left: auto;
+            margin-top: auto;
+            display: flex;
+        }
+
+        a.feedback {
+            font-family: "Roboto";
+            font-size: 14px;
+            margin-left: auto;
+            margin-right: 10px;
+            padding: 2em;
+            color: var(--text_dark);
+        }
+
+        a.feedback:hover {
+            opacity: 1;
+            font-weight: 600;
+            text-decoration: underline;
+            color: var(--text_dark);
+        }
     </style>
 
 
@@ -274,7 +296,9 @@
 
 
             
-            
+            <div class="feedbackBar">
+                <a class="feedback" href="feedback.html">Provide Feedback?</a>
+            </div>     
         </div> <!-- end container-->
     
 

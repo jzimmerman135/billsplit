@@ -85,6 +85,31 @@
   background: var(--text_green);
 }
 
+.notify {
+  margin: 0.5em;
+  opacity: 0.85;
+  font-size: 22px;
+  font-family: "Roboto Slab";
+  font-size: 0.8em;
+  height: fit-content;
+  padding: 0.2em 1.2em;
+  text-decoration: none;
+  background-color: rgb(39, 39, 172);
+  background-color: var(--text_dark);
+  color: var(--text_light);
+  font-weight: 400;
+  border-radius: 0.8em;
+  border-style: solid;
+  border-color: var(--text_dark_low_opacity);
+  border-width: 2px;
+  transition: 0.3s;
+}
+
+.notify:hover {
+  background-color: rgb(88, 88, 249);
+}
+
+
 @media screen and (max-width:600px) {
   #symbol {
     transform: scale(1);
