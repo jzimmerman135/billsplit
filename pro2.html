@@ -115,8 +115,13 @@
             
                 <script language = "javascript">
                 function emailEntered(){
-                document.getElementById("email").value = "Email Has Been Recorded!";
-              }
+                    if (document.getElementById("email").value == ""){
+                        document.getElementById("email").value = "Please enter an email address";
+                    }
+                    else {
+                        document.getElementById("email").value = "Email Has Been Recorded!";
+                    }
+                }
                 </script>
                 
             </div> 

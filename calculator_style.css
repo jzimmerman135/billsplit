@@ -60,11 +60,11 @@ input {
 
 #welcomeSub {
     width: 80%;
+    max-width: 40ch;
     font-size: 20px;
     padding: 2em;
     padding-top: 1em;
     opacity: 0.6;
-    letter-spacing: 0.02em;
     text-align: center;
 }
 
