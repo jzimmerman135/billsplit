@@ -1,3 +1,16 @@
+:root {
+  --text_main: rgb(63, 63, 62);
+  --text_dark: #05386B;
+  --bg_main: #f0f0f0;
+  --text_main: rgb(63, 63, 62);
+  --text_green: #49d086;
+  --text_light: #EDF5E1;
+  --text_dark: #05386B;
+  --bg_accent_light: #8EE4AF;
+  --text_dark_low_opacity: rgba(5, 56, 107, 0.5);
+  --text_dark_border_opacity: rgba(5, 56, 107, 0.3);
+  --bg_purple: rgb(84, 78, 213);
+}
 
 .founders{
   background-color: var(--bg_accent_light);
