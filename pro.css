@@ -50,8 +50,8 @@
   filter: saturate(0.8) ;
 }
 
-.button.pro {
-  font-size: 25px;
+.notify {
+  font-size: 18px;
   font-family: "Roboto Slab";
   padding: 0.45em 1em;
   margin: 0.25em;
@@ -68,7 +68,7 @@
   transition: 0.3s;
 }
 
-.button.pro:hover{
+.notify:hover{
   background: var(--text_green);
 }
 
@@ -89,6 +89,9 @@
   }
   .receiptPic {
     display: none;
+  }
+  .notify {
+    font-size: 14px;
   }
 }
 
