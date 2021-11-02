@@ -83,6 +83,11 @@ h3{
     max-width: 50vw;
 }
 
+.introText p {
+    max-width: 37ch; 
+    font-size: 25px;
+}
+
 .button {
     font-family: "Roboto Slab";
     padding: 0.45em 1em;
@@ -165,9 +170,55 @@ h3{
     opacity: 0.7;
     font-family: "Roboto";
     font-size: 18px;
-    margin-top: 1em;
-    margin-left: 2em;
+    margin-left: 6em;
     margin-right: auto;
+}
+
+.proElse {
+    display: flex;
+    align-items: center;
+}
+@media screen and (max-width:1000px) {
+    .button {
+        font-size: 16px;
+        margin: 0.5em;
+    }
+    .normalLink {
+        font-size: 16px;
+        margin: 0.5em;
+    }
+}
+
+@media screen and (max-width:915px) {
+    h2.title {
+        font-size: 35px; 
+    }
+    
+    .introText p {
+        max-width: 37ch; 
+        font-size: 16px;
+    }
+    .introText {
+        min-width: 340px;
+    }
+    
+    .backgroundPicture {
+        transform: scale(0.8);
+        padding-left: 1em;
+        margin: 0;
+    }
+    .structure {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .button {
+        font-size: 14px;
+        margin: 0.5em;
+    }
+    .normalLink {
+        font-size: 14px;
+
+    }
 }
 
 @media screen and (max-width:800px) {
@@ -178,29 +229,55 @@ h3{
         transform: scale(0.8);
         margin: auto;
     }
-    .button {
-        font-size: 16px;
-    }
-   .proMsg {
-       font-size: 12px
-   }
+    
    .proHead {
        transform: scale(0.8);
        margin-left: 1em;
    }
+   .proMsg {
+    margin-left: 10vw;
+    margin-right: auto;
+    
+    }
 }
 
 @media screen and (max-width:600px){
+    .structure {
+        justify-content: center;
+    }
     .pro {
         margin-left: auto;
     }
     .proHead {
         margin: auto;
-        margin-bottom: -1em;
+        margin-bottom: 0;
     }
     .proMsg {
+        margin-left: 1em;
         margin-right: auto;
+        font-size: 14px;
     }
+    .introLinks {
+        flex-direction: column;
+    }
+    .introText {
+        min-width: none;
+        width: 90%;
+    }
+}
 
+@media screen and (max-width:400px) {
+    .introText {
+        min-width: none;
+        width: 90%;
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+}
 
+@media screen and (min-width:1200) {
+    .backgroundPicture {
+        margin-right: auto;
+        margin-left: 3em;
+    }
 }
