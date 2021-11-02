@@ -114,6 +114,7 @@ input {
     margin: 5px;
     opacity: 0.8;
     border-radius: 0.5em;
+    touch-action: manipulation;
 }
 
 
@@ -148,6 +149,7 @@ input {
     justify-content: left;
     padding: 5px;
     margin: 2.5px 5px;
+    touch-action: manipulation;
 }
 .prices {
     font-size: 22px;
@@ -157,6 +159,7 @@ input {
     justify-content: left;
     padding: 5px;
     margin: 2.5px 5px;
+    touch-action: manipulation;
 }
 .sharedBy {
     font-size: 22px;
@@ -167,6 +170,7 @@ input {
      align-items: center;
      justify-content: left;
      text-align: left;
+     touch-action: manipulation;
  }
  .names {
     font-size: 22px;
@@ -175,6 +179,7 @@ input {
     margin: 2.5px 5px;
     opacity: 0.9;
     border-radius: 0.3em;
+    touch-action: manipulation;
 }
 
 .namesHRow .names {
