@@ -1,0 +1,36 @@
+.container {
+    font-family: "Roboto";
+}
+
+#pageContainer {
+    background: var(--bg_accent_light);
+}
+
+.container h3 {
+    color: var(--text_dark);
+    padding-bottom: 0;
+    text-decoration: underline;
+}
+
+.container p {
+    opacity: 0.7;
+    max-width: 40ch;
+    padding-bottom: 1em;
+    padding-top: 0.5em;
+}
+
+.feedback {
+    margin: 1em;
+}
+
+.container textarea {
+    background-color: #f5f5f5;
+    font-size: 18px;
+    font-family: "Roboto";
+}
+
+@media screen and (max-width:600px) {
+    .container textarea {
+        font-size: 16px;
+    }
+}
