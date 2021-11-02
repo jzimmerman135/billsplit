@@ -105,8 +105,8 @@
                 </div>
             <br>
             <form class = description>
-                Email: <input type = "text" id = "email" value = "abc@gmail.com" class = "email"><br><br>
-                <input type = "button" value = "Notify Me" onclick = "emailEntered()" class = "notify">
+                Email: <input type = "text" id = "email" placeholder = "abc@gmail.com" class = "email"><br><br>
+                <button onclick = "emailEntered()" class = "notify">Notify Me</button>
             </form>
         
     
@@ -116,11 +116,13 @@
             
                 <script language = "javascript">
                 function emailEntered(){
-                    if (document.getElementById("email").value == ""){
-                        document.getElementById("email").placeholder = "Please enter an email address";
+                    if (document.getElementById("email").value == "" || !document.getElementById("email").value.includes('@')){
+                        document.getElementById("email").value = "";
+                        document.getElementById("email").placeholder = "Please enter a valid email address";
                     }
                     else {
-                        document.getElementById("email").value = "Email Has Been Recorded!";
+                        document.getElementById("email").value = "Thank You, Email Has Been Recorded!";
+                        document.getElementsByClassName("notify")[0].style.visibility = "hidden";
                     }
                 }
                 </script>

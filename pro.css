@@ -70,7 +70,7 @@
   margin: 0.25em;
   margin-left: 2em;
   text-decoration: none;
-  background-color: var(--bg_purple);
+  background: var(--bg_purple);
   color: var(--text_light);
   font-weight: 400;
   letter-spacing: 1px;
