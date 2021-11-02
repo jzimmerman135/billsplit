@@ -25,7 +25,7 @@
 }
 
 .description{
-  width: 35ch;
+  max-width: 35ch;
   font-size: 25px;
   float:left;
 }
