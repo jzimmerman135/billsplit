@@ -50,6 +50,28 @@
   filter: saturate(0.8) ;
 }
 
+.button.pro {
+  font-size: 25px;
+  font-family: "Roboto Slab";
+  padding: 0.45em 1em;
+  margin: 0.25em;
+  margin-left: 2em;
+  text-decoration: none;
+  background-color: var(--bg_purple);
+  color: var(--text_light);
+  font-weight: 400;
+  letter-spacing: 1px;
+  border-radius: 0.8em;
+  border-style: solid;
+  border-color: var(--text_dark);
+  border-width: 3px;
+  transition: 0.3s;
+}
+
+.button.pro:hover{
+  background: var(--text_green);
+}
+
 @media screen and (max-width:600px) {
   #symbol {
     transform: scale(1);
